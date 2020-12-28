@@ -1,0 +1,40 @@
+<div class="text-center">
+  <form [formGroup]="form" class="form-signin" >
+    <div class="form-group">
+      <label for="inputEmail">Email address</label>
+      <input formControlName="email" type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" >
+      <p *ngIf="errorFormRegister.errorsForm.email" style="color: red"> {{errorFormRegister.errorsForm.email}} </p>
+    </div>
+    <div class="form-group">
+      <label for="inputLastName">Last name</label>
+      <input formControlName="lastName" type="text" class="form-control" id="inputLastName" >
+      <p *ngIf="errorFormRegister.errorsForm.lastName" style="color: red"> {{errorFormRegister.errorsForm.lastName}} </p>
+    </div>
+    <div class="form-group">
+      <label for="inputFirstName">First name</label>
+      <input formControlName="firstName" type="text" class="form-control" id="inputFirstName" >
+      <p *ngIf="errorFormRegister.errorsForm.firstName" style="color: red"> {{errorFormRegister.errorsForm.firstName}} </p>
+    </div>
+
+    <div formArrayName="addresses" class="form-group">
+      <label>Addresses : </label>
+      <button class="btn btn-success mr-auto" (click)="addAddress()"> + </button>
+      <div  class="form-group" *ngFor="let addresse of form.get('addresses').controls;let index=index">
+        <input type="text" class="form-control" [formControl]="addresse">
+        <p *ngIf="errorFormRegister.errorsForm.addresses[index]" style="color: red"> {{errorFormRegister.errorsForm.addresses[index]}} </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputPassword">Password</label>
+      <input formControlName="password" type="password" class="form-control" id="inputPassword" >
+      <p *ngIf="errorFormRegister.errorsForm.password" style="color: red"> {{errorFormRegister.errorsForm.password}} </p>
+    </div>
+    <div class="form-group">
+      <label for="inputConfirmPassword">Confirm password</label>
+      <input formControlName="confirmPassword" type="password" class="form-control" id="inputConfirmPassword" >
+      <p *ngIf="errorFormRegister.errorsForm.confirmPassword" style="color: red"> {{errorFormRegister.errorsForm.confirmPassword}} </p>
+    </div>
+    <button type="submit" (click)="submit()"  class="btn btn-success">Register</button>
+  </form>
+</div>

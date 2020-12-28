@@ -1,0 +1,5 @@
+<div>
+  <div class="container" *ngFor="let floor of floors; let index = index" >
+    <app-promo-floor class="row" [promoFloor]="getPromoFloor(index)"></app-promo-floor>
+  </div>
+</div>

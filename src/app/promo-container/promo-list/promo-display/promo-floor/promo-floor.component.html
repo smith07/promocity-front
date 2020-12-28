@@ -1,0 +1,3 @@
+
+<app-promo  [ngClass]="{col: 'promoFloor.length ==3', 'col-4': 'promoFloor.length !=3'}"
+           *ngFor="let promo of promoFloor" class="col" [promo]="promo"></app-promo>

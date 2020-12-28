@@ -1,0 +1,31 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<div class="row">
+  <div class="col-6 mx-auto" style="margin-top:20px;">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link"
+           [routerLink]="['/register']"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{ exact: true }"
+        >Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           [routerLink]="['/login']"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{ exact: true }"
+        >Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{ exact: true }"
+           [routerLink]="['/promos']" >Promos</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<router-outlet></router-outlet>

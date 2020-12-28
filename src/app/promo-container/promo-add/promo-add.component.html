@@ -1,0 +1,46 @@
+<div class="text-center">
+  <form [formGroup]="form" (ngSubmit)="submit()" class="form-signin" >
+    <div class="form-group">
+      <label for="shop">shop</label>
+      <input formControlName="shop" type="text" class="form-control" id="shop" aria-describedby="emailHelp" >
+      <p *ngIf="errorForm.errorsForm.shop" style="color: red"> {{errorForm.errorsForm.shop}} </p>
+    </div>
+    <div class="form-group">
+    <label for="product">product</label>
+    <input formControlName="product" type="text" class="form-control" id="product" >
+    <p *ngIf="errorForm.errorsForm.product" style="color: red"> {{errorForm.errorsForm.product}} </p>
+  </div>
+    <div class="form-group">
+      <label for="newPrice">New Price</label>
+      <input formControlName="newPrice" type="text" class="form-control" id="newPrice" >
+      <p *ngIf="errorForm.errorsForm.newPrice" style="color: red"> {{errorForm.errorsForm.newPrice}} </p>
+    </div>
+
+    <div class="form-group">
+      <label for="oldPrice">Old Price</label>
+      <input formControlName="oldPrice" type="text" class="form-control" id="oldPrice" >
+      <p *ngIf="errorForm.errorsForm.oldPrice" style="color: red"> {{errorForm.errorsForm.oldPrice}} </p>
+    </div>
+    <div class="form-group">
+      <label for="endDate">End Date</label>
+      <input formControlName="endDate" type="text" class="form-control" id="endDate" >
+      <p *ngIf="errorForm.errorsForm.endDate" style="color: red"> {{errorForm.errorsForm.endDate}} </p>
+    </div>
+
+    <div class="form-group">
+      <label for="currency">Currency</label>
+      <input formControlName="currency" type="text" class="form-control" id="currency" >
+      <p *ngIf="errorForm.errorsForm.currency" style="color: red"> {{errorForm.errorsForm.currency}} </p>
+    </div>
+
+    <div formArrayName="images" class="form-group">
+    <label>Images : </label>
+    <button type="button"  class="btn btn-success mr-auto" (click)="addImage()"> + </button>
+    <div  class="form-group" *ngFor="let image of form.get('images').controls;let index=index">
+      <input type="text" class="form-control" [formControl]="image">
+      <p *ngIf="errorForm.errorsForm.images[index]" style="color: red"> {{errorForm.errorsForm.images[index]}} </p>
+    </div>
+  </div>
+    <button type="submit"  class="btn btn-success">Register</button>
+  </form>
+</div>

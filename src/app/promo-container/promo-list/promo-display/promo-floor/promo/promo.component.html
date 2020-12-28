@@ -1,0 +1,12 @@
+<div appPutForward class="card-body">
+    <img [src]="promo.images[0].url" class="card-img-top" alt="...">
+    <h5 class="card-title">{{promo.product}}</h5>
+    <p class="card-text">shop : {{promo.shop}}</p>
+    <p class="card-text">old price : {{promo.oldPrice + " " +promo.currency}}</p>
+    <p class="card-text pull-right">new price : {{promo.newPrice + " " +promo.currency}}</p>
+  <p class="pull-right">end-date : {{promo.endDate | dateFormat}} </p>
+  <a class="btn btn-primary">details</a>
+  <a class="btn btn-primary" (click)="redirectEdit(promo.product)">editer</a>
+
+  </div>
+
